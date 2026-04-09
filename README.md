@@ -31,7 +31,7 @@ Understanding technology in full detail has been my passion since childhood. Fas
 - Automating bulk changes in multiple Cloudflare accounts using Cloudflare API + Bash / Python
 - Cloudflare Magic WAN implementation and WAF management
 - Migrating end-of-life systems (Debian 9/10, CentOS 6/7)
-- Containerizing applications with Docker / Docker Compose / Docker Swarm
+- Containerizing applications with Docker / Docker Compose / Docker Swarm, later migrating to Kubernetes (Talos OS, Cilium CNI, Multus for static IPs) across multiple clusters for improved scalability
 - Load balancing and implementing HA using HAproxy / Traefik
 - Creating hardened Linux system images (implementing CIS recommendations)
 - Managing Postfix / Dovecot servers, troubleshooting, securing and patching
@@ -95,11 +95,11 @@ Bash, Python, Ansible Playbooks
 
 ## Side Projects
 
-### mRemotify
+### [mRemotify](https://github.com/deadRabbit92/mRemotify)
 A personal project aimed at modernizing and enhancing remote connection management workflows.
 
 ### ERP & Calendar System for a Fitness Studio
-Building an ERP solution with integrated calendar management tailored for a local fitness studio — covering scheduling, member management, and day-to-day operations.
+Building a fully customized, mobile-first PWA web application for a local fitness studio — covering ERP, scheduling, member management, and day-to-day operations. The app enables gym customers to easily book their own appointments through a self-service interface. Built with the help of Claude Code, packaged as a custom Docker container image, and fully automated in deployment for seamless updates and maintainability.
 
 ### Open Source & Self-Hosting Advocacy
 Passionate about open-source software, on-premise infrastructure, cloud-to-on-premise migration, and reducing vendor dependency. Exploring and contributing to self-hosted alternatives in my free time.
