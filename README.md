@@ -96,7 +96,7 @@ Bash, Python, Ansible Playbooks
 ## Side Projects
 
 ### [mRemotify](https://github.com/deadRabbit92/mRemotify)
-A personal project aimed at modernizing and enhancing remote connection management workflows.
+After migrating from Windows to Ubuntu as my daily work OS, I needed a replacement for mRemoteNG — my main tool for SSH session management and RDP. Built a web-based, PWA-supported 1:1 replacement using Claude Code that I now use every day and keep improving.
 
 ### ERP & Calendar System for a Fitness Studio
 Building a fully customized, mobile-first PWA web application for a local fitness studio — covering ERP, scheduling, member management, and day-to-day operations. The app enables gym customers to easily book their own appointments through a self-service interface. Built with the help of Claude Code, packaged as a custom Docker container image, and fully automated in deployment for seamless updates and maintainability.
