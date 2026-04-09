@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Felix Gebauer — CV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --accent: #1a5276;
+    --accent-light: #2980b9;
+    --text: #1c1c1c;
+    --text-muted: #4a4a4a;
+    --text-light: #6b6b6b;
+    --bg: #ffffff;
+    --bg-aside: #f0f4f7;
+    --border: #d5dde3;
+    --tag-bg: #e8eff4;
+    --tag-text: #1a5276;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { font-size: 15px; }
+
+  body {
+    font-family: 'Source Sans 3', 'Segoe UI', sans-serif;
+    color: var(--text);
+    background: #e4e4e4;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 20px auto;
+    background: var(--bg);
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+    overflow: hidden;
+  }
+
+  /* ---- SIDEBAR ---- */
+  .sidebar {
+    background: var(--accent);
+    color: #fff;
+    padding: 48px 26px 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .sidebar h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 0.82rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+  }
+
+  .sidebar-section { display: flex; flex-direction: column; gap: 4px; }
+
+  .sidebar .detail-row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8px;
+  }
+
+  .sidebar .detail-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.5);
+    font-weight: 600;
+  }
+
+  .sidebar .detail-value {
+    font-size: 0.88rem;
+    color: #fff;
+    line-height: 1.4;
+  }
+
+  .sidebar a {
+    color: #a9d4f5;
+    text-decoration: none;
+  }
+  .sidebar a:hover { text-decoration: underline; }
+
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    list-style: none;
+  }
+
+  .tag-list li {
+    background: rgba(255,255,255,0.12);
+    color: rgba(255,255,255,0.9);
+    font-size: 0.74rem;
+    padding: 3px 9px;
+    border-radius: 3px;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  .sidebar .edu-item {
+    margin-bottom: 12px;
+  }
+
+  .sidebar .edu-title {
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: #fff;
+    line-height: 1.35;
+  }
+
+  .sidebar .edu-place {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.35;
+  }
+
+  .sidebar .edu-date {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.45);
+    margin-top: 1px;
+  }
+
+  .sidebar .cert-item {
+    font-size: 0.85rem;
+    color: #fff;
+    font-weight: 600;
+  }
+
+  .sidebar .lang-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    margin-bottom: 4px;
+  }
+
+  .sidebar .lang-level {
+    color: rgba(255,255,255,0.55);
+    font-size: 0.78rem;
+  }
+
+  /* ---- MAIN ---- */
+  .main {
+    padding: 48px 38px 36px 34px;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+  }
+
+  .header h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.2rem;
+    color: var(--accent);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+
+  .header .subtitle {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-top: 4px;
+    letter-spacing: 0.02em;
+  }
+
+  .header .location {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-top: 2px;
+  }
+
+  .header .summary {
+    margin-top: 14px;
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    border-left: 3px solid var(--accent-light);
+    padding-left: 14px;
+  }
+
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.05rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding-bottom: 6px;
+    border-bottom: 2px solid var(--accent);
+    margin-bottom: 14px;
+  }
+
+  /* Experience */
+  .exp-item {
+    margin-bottom: 18px;
+    page-break-inside: avoid;
+  }
+
+  .exp-item:last-child { margin-bottom: 0; }
+
+  .exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .exp-role {
+    font-weight: 700;
+    font-size: 0.92rem;
+    color: var(--text);
+  }
+
+  .exp-company {
+    font-weight: 400;
+    color: var(--accent-light);
+  }
+
+  .exp-date {
+    font-size: 0.78rem;
+    color: var(--text-light);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .exp-bullets {
+    list-style: none;
+    margin-top: 6px;
+    padding-left: 0;
+  }
+
+  .exp-bullets li {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    padding-left: 14px;
+    position: relative;
+    margin-bottom: 3px;
+  }
+
+  .exp-bullets li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--accent-light);
+  }
+
+  /* Side Projects */
+  .project-item {
+    margin-bottom: 14px;
+  }
+
+  .project-item:last-child { margin-bottom: 0; }
+
+  .project-name {
+    font-weight: 700;
+    font-size: 0.88rem;
+    color: var(--text);
+  }
+
+  .project-name a {
+    color: var(--accent-light);
+    text-decoration: none;
+  }
+
+  .project-name a:hover { text-decoration: underline; }
+
+  .project-desc {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.55;
+    margin-top: 2px;
+  }
+
+  /* Qualifications */
+  .qual-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px 16px;
+  }
+
+  .qual-list li {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    padding-left: 14px;
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .qual-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--accent-light);
+  }
+
+  /* ---- PRINT ---- */
+  @media print {
+    html { font-size: 14px; }
+    body { background: #fff; }
+    .page {
+      margin: 0;
+      box-shadow: none;
+      width: 100%;
+      min-height: auto;
+    }
+  }
+
+  /* ---- MOBILE ---- */
+  @media screen and (max-width: 800px) {
+    html { font-size: 14px; }
+    .page {
+      width: 100%;
+      grid-template-columns: 1fr;
+      margin: 0;
+      box-shadow: none;
+    }
+    .sidebar {
+      padding: 28px 22px;
+      gap: 20px;
+    }
+    .main {
+      padding: 28px 22px;
+    }
+    .qual-list {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <div class="sidebar-section">
+      <h2>Contact</h2>
+      <div class="detail-row">
+        <span class="detail-label">Email</span>
+        <span class="detail-value"><a href="mailto:mail@gebauer.services">mail@gebauer.services</a></span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">LinkedIn</span>
+        <span class="detail-value"><a href="https://www.linkedin.com/in/felix-gebauer-28994017a">Felix Gebauer</a></span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">GitHub</span>
+        <span class="detail-value"><a href="https://github.com/deadRabbit92">deadRabbit92</a></span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">Nationality</span>
+        <span class="detail-value">German</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">IT Experience</span>
+        <span class="detail-value">Since 2008</span>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <h2>Skills</h2>
+      <ul class="tag-list">
+        <li>Linux</li>
+        <li>Ansible</li>
+        <li>Docker</li>
+        <li>Kubernetes</li>
+        <li>Talos OS</li>
+        <li>Cilium</li>
+        <li>VMware vSphere</li>
+        <li>VMware vSAN</li>
+        <li>LINSTOR</li>
+        <li>Proxmox</li>
+        <li>Windows Server</li>
+        <li>HAproxy</li>
+        <li>Traefik</li>
+        <li>Check Point</li>
+        <li>Cloudflare</li>
+        <li>Bash</li>
+        <li>Python</li>
+        <li>Git</li>
+        <li>Gitea</li>
+        <li>PostgreSQL</li>
+        <li>Jira</li>
+        <li>Confluence</li>
+        <li>Postfix</li>
+        <li>Dovecot</li>
+        <li>Penetration Testing</li>
+      </ul>
+    </div>
+
+    <div class="sidebar-section">
+      <h2>Education</h2>
+      <div class="edu-item">
+        <div class="edu-title">IT Systemelektroniker</div>
+        <div class="edu-place">Technical University of Berlin</div>
+        <div class="edu-date">09/2008 &ndash; 08/2011</div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-title">Advanced Technical Certificate</div>
+        <div class="edu-place">OSZ-IMT, Professional High School (Computer Science)</div>
+        <div class="edu-date">08/2013 &ndash; 07/2014</div>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <h2>Certifications</h2>
+      <div class="cert-item">CCNA</div>
+    </div>
+
+    <div class="sidebar-section">
+      <h2>Languages</h2>
+      <div class="lang-item">
+        <span>German</span>
+        <span class="lang-level">Native</span>
+      </div>
+      <div class="lang-item">
+        <span>English</span>
+        <span class="lang-level">Business-fluent</span>
+      </div>
+      <div class="lang-item">
+        <span>French</span>
+        <span class="lang-level">Basic</span>
+      </div>
+    </div>
+
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <header class="header">
+      <h1>Felix Gebauer</h1>
+      <div class="subtitle">Senior System Engineer (Linux) &middot; IT Security &middot; Network Engineering</div>
+      <div class="location">Salzburg, Austria</div>
+      <p class="summary">Understanding technology in full detail has been my passion since childhood. Fascinated by complex IT infrastructures of enterprise companies, I gained experience across the full stack &mdash; from datacenter and hosting to user access and everything in between. Seeing the whole picture is what drives me, along with my passion for innovation.</p>
+    </header>
+
+    <section>
+      <div class="section-title">Professional Experience</div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-role">Senior System Engineer (Linux) <span class="exp-company">&mdash; ITSP Services GmbH</span></div>
+          <div class="exp-date">02/2022 &ndash; present</div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Lifecycle management of ~300+ Linux servers using Ansible / VMware vSphere / vSAN, 90% on-premises</li>
+          <li>Storage management with LINSTOR for distributed replicated block storage</li>
+          <li>Automated ACME certificate deployment via Ansible and Cloudflare DNS API (LetsEncrypt, ZeroSSL)</li>
+          <li>Automated bulk Cloudflare account management using Cloudflare API + Bash / Python</li>
+          <li>Cloudflare Magic WAN implementation and WAF management</li>
+          <li>Migrated end-of-life systems (Debian 9/10, CentOS 6/7)</li>
+          <li>Evolved container platform from Docker Swarm to Kubernetes (Talos OS, Cilium CNI, Multus) across multiple clusters for improved scalability</li>
+          <li>Load balancing and HA implementation using HAproxy / Traefik</li>
+          <li>Created hardened Linux images implementing CIS recommendations</li>
+          <li>Managed Postfix / Dovecot mail infrastructure, security hardening and patching</li>
+          <li>Set up and operated colocation datacenter in Salzburg (Conova)</li>
+          <li>Central firewall management with Check Point Identity Awareness</li>
+          <li>On-premises Atlassian Jira + Confluence Datacenter HA using PostgreSQL and Docker Swarm</li>
+          <li>On-premises Git infrastructure using Gitea with custom Docker images and Git Actions</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-role">IT Security Engineer <span class="exp-company">&mdash; KTM AG</span></div>
+          <div class="exp-date">02/2021 &ndash; 01/2022</div>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-role">Network Engineer <span class="exp-company">&mdash; FlixMobility Tech GmbH</span></div>
+          <div class="exp-date">03/2017 &ndash; 01/2021</div>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-role">Network Engineer <span class="exp-company">&mdash; Krieger Business Services GmbH</span></div>
+          <div class="exp-date">08/2015 &ndash; 01/2017</div>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-role">On-Site System Administrator <span class="exp-company">&mdash; Nexos Computer GmbH</span></div>
+          <div class="exp-date">11/2014 &ndash; 07/2015</div>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-role">IT Servicedesk L2/L3 <span class="exp-company">&mdash; Computacenter AG &amp; Co. oHG</span></div>
+          <div class="exp-date">12/2012 &ndash; 06/2013</div>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-role">IT Servicedesk L2/L3 <span class="exp-company">&mdash; tecops personal GmbH</span></div>
+          <div class="exp-date">04/2012 &ndash; 07/2012</div>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-role">On-Site System Administrator <span class="exp-company">&mdash; GFAD IT &amp; Service GmbH</span></div>
+          <div class="exp-date">09/2011 &ndash; 02/2012</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title">Side Projects</div>
+
+      <div class="project-item">
+        <div class="project-name"><a href="https://github.com/deadRabbit92/mRemotify">mRemotify</a></div>
+        <p class="project-desc">After migrating from Windows to Ubuntu as my daily work OS, I needed a replacement for mRemoteNG &mdash; my main tool for SSH session management and RDP. Built a web-based, PWA-supported 1:1 replacement using Claude Code that I use every day and keep improving.</p>
+      </div>
+
+      <div class="project-item">
+        <div class="project-name">ERP &amp; Calendar System for a Fitness Studio</div>
+        <p class="project-desc">Fully customized, mobile-first PWA web application covering ERP, scheduling, member management, and self-service appointment booking for gym customers. Built with Claude Code, packaged as a custom Docker container image with fully automated deployment.</p>
+      </div>
+
+      <div class="project-item">
+        <div class="project-name">Open Source &amp; Self-Hosting Advocacy</div>
+        <p class="project-desc">Passionate about open-source software, on-premise infrastructure, cloud-to-on-premise migration, and reducing vendor dependency through self-hosted alternatives.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title">Qualifications</div>
+      <ul class="qual-list">
+        <li>15+ years IT experience, deep Linux expertise</li>
+        <li>10+ years Windows administration</li>
+        <li>10+ years 2nd &amp; 3rd level support</li>
+        <li>Large-scale networks &amp; datacenters</li>
+        <li>Virtualization &amp; server/storage hardware</li>
+        <li>Complex IT environment administration</li>
+        <li>Mentoring junior colleagues</li>
+      </ul>
+    </section>
+
+  </main>
+
+</div>
+
+</body>
+</html>

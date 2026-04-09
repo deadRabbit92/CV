@@ -26,7 +26,8 @@ Understanding technology in full detail has been my passion since childhood. Fas
 ### ITSP Services GmbH — Senior System Engineer (Linux)
 **02/2022 - present**
 
-- Lifecycle management of ~300+ Linux servers using Ansible / VMware vSphere, 90% on-premises
+- Lifecycle management of ~300+ Linux servers using Ansible / VMware vSphere / vSAN, 90% on-premises
+- Storage management with LINSTOR for distributed replicated block storage
 - Fully automating ACME certificate deployment using Ansible and Cloudflare DNS API on LetsEncrypt and ZeroSSL
 - Automating bulk changes in multiple Cloudflare accounts using Cloudflare API + Bash / Python
 - Cloudflare Magic WAN implementation and WAF management
